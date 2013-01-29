@@ -1,0 +1,13 @@
+<% if current_user %>
+  Welcome <%= current_user.full_name %>!
+  <ul>
+    <li><%= current_user.first_name %></li>
+    <li><%= current_user.email %></li>
+    <li><%= current_user.bday %></li>
+    <li><%= current_user.gender %></li>
+    <li><%= current_user.location %></li>
+  </ul>
+  <%= link_to "Sign out", signout_path %>
+<% else %>
+  <%= link_to "Sign in with Facebook", "/auth/facebook", class: "btn btn-primary" %>
+<% end %>
