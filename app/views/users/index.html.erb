@@ -1,4 +1,6 @@
 <% if current_user %>
+  </br>
+  </br>
   Welcome <%= current_user.full_name %>!
   <ul>
     <li><%= current_user.first_name %></li>
@@ -7,7 +9,41 @@
     <li><%= current_user.gender %></li>
     <li><%= current_user.location %></li>
   </ul>
-  <%= link_to "Sign out", signout_path %>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container">
+        <nav>
+          <ul class="nav pull-right">
+            <li><%= link_to "Sign out", signout_path %></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="sub-navbar">
+        <div class="container">
+          <div class="pull-left">
+            Welcome <%= current_user.full_name %>!
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 <% else %>
-  <%= link_to "Sign in with Facebook", "/auth/facebook", class: "btn btn-primary" %>
+  <header class="navbar navbar-fixed-top navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container">
+        <nav>
+          <ul class="nav pull-right">
+            <li><%= link_to "Sign in with Facebook", "/auth/facebook" %></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="sub-navbar">
+        <div class="container">
+          <div class="pull-left">
+            Hello!
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 <% end %>
