@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :bday, :email, :uid_fb, :first_name, :full_name, :gender, :location, :provider, :number_smart, :number_globe
+  attr_accessible :bday, :email, :uid_fb, :first_name, :full_name, :gender, :location, :provider, :number_smart, :number_globe, :number_notify
 
   has_many :debits
   has_many :prepaid_pins

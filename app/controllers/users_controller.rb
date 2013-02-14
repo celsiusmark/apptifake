@@ -40,4 +40,20 @@ class UsersController < ApplicationController
     end
       redirect_to smoney_path
   end
+
+  def lbc
+    if current_user
+      @user = current_user
+    else
+      flash[:error] = "Sign in to buy coins with LBC!"
+    end
+  end
+
+  def lbc_payment
+    @user = current_user
+    if @user.update_attributes(params[:user])
+      flash[:success] = "LBC notify number saved!"
+    end
+    redirect_to lbc_path
+  end
 end

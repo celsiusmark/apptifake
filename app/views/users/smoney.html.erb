@@ -11,19 +11,15 @@
         <p>* No Smart Money Account? <%= link_to "Register Smart Money Account", "http://www1.smart.com.ph/money/get/" %></p>
 
         <%= form_for @user, :url => 'smart_payment' do |f| %>
-          <%= f.text_field :number_smart, placeholder: "EX: 09478410243", name: 'smartNumber' %>
+          <%= f.text_field :number_smart, placeholder: "EX: 09478410243" %>
           <%= f.submit "Save", class: "btn btn-primary", name: "submit_smartNumber" %>
         <% end %>
         </form>
       </div>
-      <% if 'smartNumber' %>
-        <% @user = User.where(number_smart: "smartNumber") %>
-        <% @user.count %>
-        <% if @user.count == 0 %>
-          <% #do nothing %>
-        <% else %>
-          <%= render 'users/smart' %>
-        <% end %>
+      <% if current_user.number_smart != nil %>
+        <%= render 'users/smart' %>
+      <% else %>
+        <% #do nothing %>
       <% end %>
     </div>
   </div>
