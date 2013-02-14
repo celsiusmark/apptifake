@@ -1,0 +1,47 @@
+<% if current_user %>
+<div class="main">
+  <div class="container">
+    <h2><span>Buy coins with LBC</span></h2>
+    <img style="margin-left:50px;" src="https://s3-ap-southeast-1.amazonaws.com/apptivate/image/logo_lbcexpress.jpg"/>
+    <div class="span5 well well-small">
+      <h3>Your Mobile Number</h3>
+      <p>* Know more about LBC Remittance? <%= link_to "LBC Services", "http://www.lbcexpress.com/PH/Services/", target: "new" %></p>
+      <p>* Use this number on the LBC Shipper (Nagpapadala) Information</p>
+      <form class="form-inline" id="form-globe_number" action="" method="post">
+      <input type="text" class="input-small" id="numberNotify" name="number_notify" value="09478410243" placeholder="EX. 09172084128"><br/>
+      <input type="submit" class="btn btn-primary" name="submit_numbernotify" value="Save" />
+      </form>
+      </div>
+      <div class="span10" style="color:#000;">
+        <hr />
+        <h3>Send Payment</h3>
+        Over 900 branches nationwide! Find a LBC branch near you. <%= link_to "Find branch", "http://www.lbcexpress.com/PH/Locator", target: "new" %><br/><br/>
+        <li>Door to Door</li>
+        <li>
+        Minimum Amount: <strong>P500.00</strong>
+        </li>
+        <li>
+        Apptivate Consignee Number: <code>09277806680 </code>
+        </li>
+        <li>
+        Apptivate Account Representative - LBC Consignee Name: Norris Perez
+        </li>
+
+        <br/>
+        <div class="alert alert-info">
+          Immediately sms to us the tracking/reference number to: <code>09277806680</code> <br/>
+          * Processing time: 1 day
+        </div>
+        Example Form:<br/>
+        <img class="img-polaroid" src="https://s3-ap-southeast-1.amazonaws.com/apptivate/image/lbc_form.jpg" />
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="main">
+    <div class="container">
+      <h2><span>Buy coins with LBC</span></h2>
+      <div class="alert alert-danger">Sign in to buy coins with Smart Money.</div>
+    </div>
+  </div>
+<% end %>

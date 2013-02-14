@@ -1,10 +1,16 @@
 class User < ActiveRecord::Base
-  attr_accessible :bday, :email, :fb_uid, :first_name, :full_name, :gender, :location, :provider
+  attr_accessible :bday, :email, :uid_fb, :first_name, :full_name, :gender, :location, :provider, :number_smart, :number_globe
+
+  has_many :debits
+  has_many :prepaid_pins
+  has_many :telco_moneys
+  has_many :user_app_searchs
+  has_one :survey
 
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider   = auth["provider"]
-      user.fb_uid     = auth["uid"]
+      user.uid_fb     = auth["uid"]
       user.full_name  = auth["info"]["name"]
       user.first_name = auth["info"]["first_name"]
       user.email      = auth["info"]["email"]
@@ -13,4 +19,5 @@ class User < ActiveRecord::Base
       user.location   = auth["info"]["location"]
     end
   end
+
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: MyString
+  type: 
+  query: MyString
+  created: 2013-02-07 10:00:33
+
+two:
+  user_id: MyString
+  type: 
+  query: MyString
+  created: 2013-02-07 10:00:33

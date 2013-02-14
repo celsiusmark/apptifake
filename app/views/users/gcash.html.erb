@@ -1,0 +1,26 @@
+<% if current_user %>
+  <div class="main">
+    <div class="container">
+      <h2><span>Buy coins with globe Gcash</span></h2>
+
+      <img style="margin-left:50px;" src="https://s3-ap-southeast-1.amazonaws.com/apptivate/image/logo_globegcash.jpg"/>
+      <div class="span5 well well-small">
+        <h3>Your Globe Mobile Number</h3>
+        <p>* This number must be associated with your Gcash Account.</p>
+        <p>* No Gcash Account? <%= link_to "Register Gcash Account", "http://gcash.globe.com.ph/productandservices#tabOne" %></p>
+
+        <%= form_for @user, :url => 'globe_payment' do |f| %>
+          <%= f.text_field :number_globe, placeholder: "EX. 09172084128" %>
+          <%= f.submit "Save", class: "btn btn-primary", name: "submit_globeNumber" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class="main">
+    <div class="container">
+      <h2><span>Buy coins with globe Gcash</span></h2>
+      <div class="alert alert-danger">Sign in to buy coins with Globe Gcash.</div>
+    </div>
+  </div>
+<% end %>

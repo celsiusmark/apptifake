@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: MyString
+  type: 
+  reference: MyString
+  amount: 1
+  expiry: 2013-02-07 09:59:21
+  created: 2013-02-07 09:59:21
+
+two:
+  user_id: MyString
+  type: 
+  reference: MyString
+  amount: 1
+  expiry: 2013-02-07 09:59:21
+  created: 2013-02-07 09:59:21

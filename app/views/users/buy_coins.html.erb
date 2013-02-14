@@ -1,0 +1,223 @@
+<% if current_user %>
+<div class="main">
+  <div class="container">
+    <h2><span>Buy Coins</span></h2>
+
+    <div class="well well-small">
+      <%= link_to "Buy Coins with Globe Gcash", gcash_path, class: "btn btn-info" %>
+      <%= link_to "Buy Coins with Smart Money", smoney_path, class: "btn btn-info" %>
+      <%= link_to "Buy Coins with LBC", lbc_path, class: "btn btn-info" %>
+    </div>
+    <div class="alert">
+      <%= render text: "Apptivate Prepaid cards available at the following locations listed below" %> <i class="icon icon-arrow-down"></i>
+    </div>
+
+    <div class="row">
+      <div class="span12">
+
+        <iframe align="right" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=proudcloud+manila&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=40.817312,76.552734&amp;ie=UTF8&amp;hq=proudcloud&amp;hnear=Manila,+Metro+Manila,+Philippines&amp;cid=10503623588753638786&amp;ll=14.606841,121.081438&amp;spn=0.024668,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe> 
+
+        <h4>Apptivate Head Quarters</h4>
+        <p>
+                          25A3D1/F Topy Building 1,
+                          No. 3 Economia Street, Libis
+                          Quezon City<br/>
+                          Call us: <strong>+632 5707884</strong><br/>
+                          SMS Customer Care Support: Globe (09277806680), Smart (09199544789)<br/>
+                          Email: <%= link_to "awesome@apptivate.co", "mailto:awesome@apptivate.co" %>
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="span12">
+
+        <iframe align="right" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.ph/maps?q=university+of+the+philippines+shopping+center&hl=en&ll=14.655963,121.069551&spn=0.026198,0.045447&sll=14.661277,121.063328&sspn=0.026198,0.045447&gl=ph&t=m&radius=1.82&hq=university+of+the+philippines+shopping+center&z=15;iwloc=A&amp;output=embed"></iframe> 
+
+        <h4>University of the Philippines Shopping Center</h4>
+          <p>
+            Stall #23
+          </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="span12">
+
+        <iframe align="right" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=ust+manila&hl=en&ll=14.609914,120.989342&spn=0.072507,0.132008&sll=14.606841,121.081438&sspn=0.072508,0.132008&hq=ust+manila&radius=15000&t=m&z=14&amp;iwloc=A&amp;output=embed"></iframe> 
+
+        <h4>University of Santo Tomas Campus</h4>
+          <p>
+          Look for <strong>Jasper Milan Regoso</strong> (09178447032)<br/>
+          Send him a message on <%= link_to "Facbook", "https://www.facebook.com/JjRegoso?fref=ts" %>
+          </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="span12">
+
+        <iframe align="right" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?q=trinoma&hl=en&ll=14.653015,121.042299&spn=0.072493,0.131836&sll=14.606841,121.081438&sspn=0.072508,0.131836&hq=trinoma&t=m&z=14&amp;output=embed"></iframe> 
+
+        <h4>Lucky First Trading - Trinoma Mall, Ground Floor</h4>
+          <p>
+            Look for <strong>Oliver Salas</strong> (09228821168)<br/>
+            Send him a message on <%= link_to "Facebook", "https://www.facebook.com/oliverasalas?fref=ts" %>
+          </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="span12">
+
+        <iframe align="right" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=6000+Juan+Luna+Street,+Cebu+City,+Central+Visayas,+Philippines&hl=en&ie=UTF8&ll=10.292689,123.903358&spn=0.010894,0.016286&sll=14.616008,121.076112&sspn=0.021428,0.032573&oq=%09Juan+Luna,+6000+Cebu&hnear=Osme%C3%B1a+Blvd,+Cebu+City,+Cebu,+Central+Visayas+6000,+Philippines&t=m&z=16;iwloc=A&amp;output=embed"></iframe> 
+
+        <h4>C24 Foodmart</h4>
+          <p>
+            Juan Luna, 6000 Cebu                 City<br/>
+            Branches:
+            <li>IT Park’s embedBloc 1 Tower - Jose Maria del Mar Street</li>
+            <li>Mabolo branch - Juan Luna Avenue</li> 
+            <li>The Strip - Capitol Site</li>
+            Contact numbers: (231-8660 / 412-2628)<br/>
+            Send them an email at <%= link_to "esplanadeholdingsinc@yahoo.com", "mailto:esplanadeholdingsinc@yahoo.com" %>
+          </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="row">
+      <div class="span12">
+
+        <iframe align="right" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Puerto+Princesa+City+Public+Market,+Puerto+Princesa,+MIMAROPA,+Philippines&hl=en&ll=9.74132,118.73641&spn=0.004616,0.00825&oq=Puerto+Princesa,+Philippines&hq=Puerto+Princesa+City+Public+Market,&hnear=Puerto+Princesa,+Palawan,+MIMAROPA,+Philippines&t=m&z=18;iwloc=A&amp;output=embed"></iframe> 
+
+        <h4>Puerto Princesa, Palawan</h4>
+          <p>
+            Look for <strong>Woody Tablazon</strong> (09399256187)<br/>
+            Send him an email at <%= link_to "wudzwoody@gmail.com", "wudzwoody@gmail.com" %>
+          </p>
+      </div>
+    </div>
+  </div>
+</div>
+<% else %>
+  <div class="main">
+    <div class="container">
+      <h2><span>Buy Coins</span></h2>
+
+      <div class="well well-small">
+        <%= link_to "Buy Coins with Globe Gcash", gcash_path, class: "btn btn-info" %>
+        <%= link_to "Buy Coins with Smart Money", smoney_path, class: "btn btn-info" %>
+        <%= link_to "Buy Coins with LBC", lbc_path, class: "btn btn-info" %>
+      </div>
+      <div class="alert">
+        <%= render text: "Apptivate Prepaid cards available at the following locations listed below" %> <i class="icon icon-arrow-down"></i>
+      </div>
+
+      <div class="row">
+        <div class="span12">
+
+          <iframe align="right" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=proudcloud+manila&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=40.817312,76.552734&amp;ie=UTF8&amp;hq=proudcloud&amp;hnear=Manila,+Metro+Manila,+Philippines&amp;cid=10503623588753638786&amp;ll=14.606841,121.081438&amp;spn=0.024668,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>.
+
+          <h4>Apptivate Head Quarters</h4>
+          <p>
+            25A3D1/F Topy Building 1,
+            No. 3 Economia Street, Libis
+            Quezon City<br/>
+            Call us: <strong>+632 5707884</strong><br/>
+            SMS Customer Care Support: Globe (09277806680), Smart (09199544789)<br/>
+            Email: <%= link_to "awesome@apptivate.co", "mailto:awesome@apptivate.co" %>
+          </p>
+        </div>
+      </div>
+
+<hr>
+
+      <div class="row">
+        <div class="span12">
+
+          <iframe align="right" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.ph/maps?q=university+of+the+philippines+shopping+center&hl=en&ll=14.655963,121.069551&spn=0.026198,0.045447&sll=14.661277,121.063328&sspn=0.026198,0.045447&gl=ph&t=m&radius=1.82&hq=university+of+the+philippines+shopping+center&z=15;iwloc=A&amp;output=embed"></iframe>.
+
+          <h4>University of the Philippines Shopping Center</h4>
+          <p>
+            Stall #23
+          </p>
+        </div>
+      </div>
+
+<hr>
+
+      <div class="row">
+        <div class="span12">
+
+          <iframe align="right" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=ust+manila&hl=en&ll=14.609914,120.989342&spn=0.072507,0.132008&sll=14.606841,121.081438&sspn=0.072508,0.132008&hq=ust+manila&radius=15000&t=m&z=14&amp;iwloc=A&amp;output=embed"></iframe>.
+
+          <h4>University of Santo Tomas Campus</h4>
+          <p>
+            Look for <strong>Jasper Milan Regoso</strong> (09178447032)<br/>
+            Send him a message on <%= link_to "Facbook", "https://www.facebook.com/JjRegoso?fref=ts" %>
+          </p>
+        </div>
+      </div>
+
+<hr>
+
+      <div class="row">
+        <div class="span12">
+
+          <iframe align="right" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?q=trinoma&hl=en&ll=14.653015,121.042299&spn=0.072493,0.131836&sll=14.606841,121.081438&sspn=0.072508,0.131836&hq=trinoma&t=m&z=14&amp;output=embed"></iframe>.
+
+          <h4>Lucky First Trading - Trinoma Mall, Ground Floor</h4>
+          <p>
+            Look for <strong>Oliver Salas</strong> (09228821168)<br/>
+            Send him a message on <%= link_to "Facebook", "https://www.facebook.com/oliverasalas?fref=ts" %>
+          </p>
+        </div>
+      </div>
+
+<hr>
+
+      <div class="row">
+        <div class="span12">
+
+          <iframe align="right" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=6000+Juan+Luna+Street,+Cebu+City,+Central+Visayas,+Philippines&hl=en&ie=UTF8&ll=10.292689,123.903358&spn=0.010894,0.016286&sll=14.616008,121.076112&sspn=0.021428,0.032573&oq=%09Juan+Luna,+6000+Cebu&hnear=Osme%C3%B1a+Blvd,+Cebu+City,+Cebu,+Central+Visayas+6000,+Philippines&t=m&z=16;iwloc=A&amp;output=embed"></iframe>.
+
+          <h4>C24 Foodmart</h4>
+          <p>
+            Juan Luna, 6000 Cebu                 City<br/>
+            Branches:
+            <li>IT Park’s embedBloc 1 Tower - Jose Maria del Mar Street</li>
+            <li>Mabolo branch - Juan Luna Avenue</li>.
+            <li>The Strip - Capitol Site</li>
+            Contact numbers: (231-8660 / 412-2628)<br/>
+            Send them an email at <%= link_to "esplanadeholdingsinc@yahoo.com", "mailto:esplanadeholdingsinc@yahoo.com" %>
+          </p>
+        </div>
+      </div>
+
+<hr>
+
+      <div class="row">
+        <div class="span12">
+
+          <iframe align="right" width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Puerto+Princesa+City+Public+Market,+Puerto+Princesa,+MIMAROPA,+Philippines&hl=en&ll=9.74132,118.73641&spn=0.004616,0.00825&oq=Puerto+Princesa,+Philippines&hq=Puerto+Princesa+City+Public+Market,&hnear=Puerto+Princesa,+Palawan,+MIMAROPA,+Philippines&t=m&z=18;iwloc=A&amp;output=embed"></iframe>.
+
+          <h4>Puerto Princesa, Palawan</h4>
+          <p>
+            Look for <strong>Woody Tablazon</strong> (09399256187)<br/>
+            Send him an email at <%= link_to "wudzwoody@gmail.com", "wudzwoody@gmail.com" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

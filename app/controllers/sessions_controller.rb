@@ -6,17 +6,17 @@ class SessionsController < ApplicationController
   def create
     auth = request.env["omniauth.auth"]
     if auth["uid"]
-      @user = User.where(fb_uid: auth["uid"])
+      @user = User.where(uid_fb: auth["uid"])
       @user.count
 
       if @user.count == 0
         @user = User.new(params[:user])
         auth  = request.env["omniauth.auth"]
-        user  = User.find_by_provider_and_fb_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
+        user  = User.find_by_provider_and_uid_fb(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)
 
       else
         auth = request.env["omniauth.auth"]
-        user = User.find_by_provider_and_fb_uid(auth["provider"], auth["uid"]).tap do |u|
+        user = User.find_by_provider_and_uid_fb(auth["provider"], auth["uid"]).tap do |u|
                     u.update_attributes(full_name:  auth["info"]["name"])
                     u.update_attributes(first_name: auth["info"]["first_name"])
                     u.update_attributes(bday:       auth["extra"]["raw_info"]["birthday"])

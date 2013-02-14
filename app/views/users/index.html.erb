@@ -1,49 +1,32 @@
-<% if current_user %>
-  </br>
-  </br>
-  Welcome <%= current_user.full_name %>!
-  <ul>
-    <li><%= current_user.first_name %></li>
-    <li><%= current_user.email %></li>
-    <li><%= current_user.bday %></li>
-    <li><%= current_user.gender %></li>
-    <li><%= current_user.location %></li>
-  </ul>
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="navbar-inner">
-      <div class="container">
+<body id="bg">
+<div class="body">
+  <%= render 'layouts/sub_navbar' %>
+  <div class="main">
+    <div id="align">
+      <%= form_for '#' do |f| %>
         <nav>
-          <ul class="nav pull-right">
-            <li><%= link_to "Sign out", signout_path %></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="sub-navbar">
-        <div class="container">
-          <div class="pull-left">
-            Welcome <%= current_user.full_name %>!
+          <div class="nav pull-left">
+            <%= f.text_field '#', class: "input-large", placeholder: "What app are you looking for?" %>
+            <%= f.select '#', options_for_select([["iPod Touch & iPhone", "t"], ["iPad", "s"]]) %>
           </div>
-        </div>
-      </div>
-    </div>
-  </header>
-<% else %>
-  <header class="navbar navbar-fixed-top navbar-inverse">
-    <div class="navbar-inner">
-      <div class="container">
-        <nav>
-          <ul class="nav pull-right">
-            <li><%= link_to "Sign in with Facebook", "/auth/facebook" %></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="sub-navbar">
-        <div class="container">
-          <div class="pull-left">
-            Hello!
+          <div class="nav pull-right" id="featured">
+            <%= link_to "Featured App: Modern Combat 4 Zero Four", '#', class: "btn btn-info" %>
           </div>
-        </div>
-      </div>
+        </nav>
+        <%= f.submit "Search", class: "btn" %>
+      <% end %>
     </div>
-  </header>
-<% end %>
+    <div id="fb-root">
+          <div style="opacity:0.9;" class="fb-like-box" data-href="https://www.facebook.com/pages/Apptivate/420758574643880"
+                                    data-show-faces="true" data-stream="true" data-header="true">
+          </div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=173594919445393";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+  </div>
+</div>
+</body>
