@@ -7,7 +7,7 @@
           <%= form_tag redeem_coins_path, method: 'get' do %>
             <span class="add-on"><i class="icon icon-qrcode"></i></span>
             <%= text_field_tag :pin_code, params[:pin_code] %>
-            <%= submit_tag "Redeem", action: 'redeem', method: 'put' %>
+            <%= submit_tag "Redeem", method: 'put' %>
           <% end %>
         </div>
       </div>
