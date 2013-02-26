@@ -7,8 +7,13 @@ ApptyDev::Application.routes.draw do
       get '/gcash',         to: 'users#gcash', as: :gcash
       get '/smoney',        to: 'users#smoney', as: :smoney
       get '/lbc',           to: 'users#lbc', as: :lbc
+      put '/my_account',    to: 'users#my_account'
+      get '/account',       to: 'users#account', as: :account
+      put '/redeem',        to: 'users#redeem'
+      get '/redeem_coins',  to: 'users#redeem_coins', as: :redeem_coins
     end
   end
+  
   root :to => "users#index"
   match "/auth/:provider/callback" => "sessions#create"
   match "/auth/failure" => "sessions#failure"
@@ -25,5 +30,9 @@ ApptyDev::Application.routes.draw do
   match '/smoney',                  to: 'users#smoney'
   match '/lbc_payment',             to: 'users#lbc_payment'
   match '/lbc',                     to: 'users#lbc'
+  match '/my_account',              to: 'users#my_account'
+  match '/account',                 to: 'users#account'
+  match '/redeem',                  to: 'users#redeem'
+  match '/redeem_coins',            to: 'users#redeem_coins'
   
 end

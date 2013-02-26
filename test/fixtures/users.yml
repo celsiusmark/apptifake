@@ -1,21 +1,37 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  provider: 
-  fb_uid: MyString
+  uid_key: MyString
+  uid_fb: MyString
   full_name: MyString
   first_name: MyString
-  email: MyString
-  gender: MyString
   bday: MyString
+  gender: MyString
+  email: MyString
   location: MyString
+  appstore_location: MyString
+  ios_device: MyString
+  number_notify: MyString
+  number_globe: MyString
+  number_smart: MyString
+  last_access_time: 2013-02-20 10:36:41
+  last_access_page: MyString
+  created: 2013-02-20 10:36:41
 
 two:
-  provider: 
-  fb_uid: MyString
+  uid_key: MyString
+  uid_fb: MyString
   full_name: MyString
   first_name: MyString
-  email: MyString
-  gender: MyString
   bday: MyString
+  gender: MyString
+  email: MyString
   location: MyString
+  appstore_location: MyString
+  ios_device: MyString
+  number_notify: MyString
+  number_globe: MyString
+  number_smart: MyString
+  last_access_time: 2013-02-20 10:36:41
+  last_access_page: MyString
+  created: 2013-02-20 10:36:41

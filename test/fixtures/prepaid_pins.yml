@@ -1,23 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user_id: MyString
+  user_id: 
   pin_type: MyString
   pin_name: MyString
   pin_code: MyString
-  denomination: 
+  denomination: 1
   distributor: MyString
-  loaded: 2013-02-07 09:55:51
-  expiry: 2013-02-07
-  created: 2013-02-07 09:55:51
+  loaded: 2013-02-19 11:58:00
+  expiry: 2013-02-19
 
 two:
-  user_id: MyString
+  user_id: 
   pin_type: MyString
   pin_name: MyString
   pin_code: MyString
-  denomination: 
+  denomination: 1
   distributor: MyString
-  loaded: 2013-02-07 09:55:51
-  expiry: 2013-02-07
-  created: 2013-02-07 09:55:51
+  loaded: 2013-02-19 11:58:00
+  expiry: 2013-02-19

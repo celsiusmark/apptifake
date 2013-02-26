@@ -1,3 +1,3 @@
 class ItunesAppstore < ActiveRecord::Base
-  attr_accessible :feed_id, :genre, :media_type
+  attr_accessible :feed_item, :genre, :media
 end

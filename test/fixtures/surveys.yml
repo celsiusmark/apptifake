@@ -1,7 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user_id: MyString
+  user_id: 1
   q1: MyString
   q2: MyString
   q3: MyString
@@ -11,7 +11,7 @@ one:
   q7: MyString
 
 two:
-  user_id: MyString
+  user_id: 1
   q1: MyString
   q2: MyString
   q3: MyString

@@ -1,19 +1,144 @@
- <div class="main">
-   <div class="container">
-     <h2><span>My Account</span></h2>
-            <div class="row">
+<div class="main">
+  <div class="container">
+    <h2><span>My Account</span></h2>
+    <div class="row">
 
-              <div class="alert alert-info">
-                <h4 class="pull-left"><u>Settings</u></h4>
-                <div class="btn-infotoolbar pull-right">
-                  <%= link_to "Redeem Coins", redeem_coins_path, class: "btn btn-primary" %>
-                  <%= link_to "Buy Coins", buy_coins_path, class: "btn btn-primary" %>
-                  <%= link_to "Buy Coins with Globe Gcash", gcash_path, class: "btn btn-info" %>
-                  <%= link_to "Buy Coins with Smart Money", smoney_path, class: "btn btn-info" %>
-                  <%= link_to "Buy Coins with LBC", lbc_path, class: "btn btn-info" %>
+      <div class="alert alert-info">
+        <h4 class="pull-left"><u>Settings</u></h4>
+        <div class="btn-infotoolbar pull-right">
+          <%= link_to "Redeem Coins", redeem_coins_path, class: "btn btn-primary" %>
+          <%= link_to "Buy Coins", buy_coins_path, class: "btn btn-primary" %>
+          <%= link_to "Buy Coins with Globe Gcash", gcash_path, class: "btn btn-info" %>
+          <%= link_to "Buy Coins with Smart Money", smoney_path, class: "btn btn-info" %>
+          <%= link_to "Buy Coins with LBC", lbc_path, class: "btn btn-info" %>
 
-                </div> <br/><br/><br/><br/>
-              </div>
-            </div>
+        </div> <br/><br/><br/><br/>
+
+        <%= form_for @user, :url => "my_account" do |f| %>
+        <div class="control-group">
+          <%= f.label :Appstore_Location %>
+          <div class="controls">
+            <!--                <select id="appstore" name="appstore">
+            <option value="ph" selected='selected'>Philippines (PH)</option>
+            <option value="us" >United States (US)</option>
+            </select> -->
+            <%= f.text_field :appstore_location, value: "Philippine (PH)", readonly: "readonly" %>
+          </div>
+        </div>
+        <div class="control-labelgroup">
+          <%= f.label :Your_Device %>
+          <div class="controls">
+            <%= f.select(:ios_device, options_for_select([["iPod Touch & Iphone", 1], ["Ipad", 2]], :selected => @user.ios_device)) %>
+          </div>
+        </div><br>
+        <div class="control-group">
+          <%= f.label :Mobile_Number %>
+          <div class="controls">
+            <%= f.text_field :number_notify, placeholder: "EX. 09172084739" %><br>
+            <%= f.submit "Save", class: "btn btn-primary" %>
+          <% end %>
+          </div>
+        </div>
+      </div>
+        <ul id="myTab" class="nav nav-tabs">
+          <li><%= link_to "Prepaid Card Top-Up History", "#topuphistory", :data => {:toggle=>"tab"} %></li>
+          <li><%= link_to "Mobile Top-Up History", "#mobiletopuphistory", :data => {:toggle=>"tab"} %></li>
+          <li class="active"><%= link_to "Purchase History", "#purchasehistory", :data => {:toggle=>"tab"} %></li>
+        </ul>
+        <div id="myTabContent" class="tab-content" style="color:#000;">
+          <div class="tab-pane fade" id="topuphistory">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Denomination</th>
+                  <th>Date Redeemed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @prepaid_pin = PrepaidPin.where(user_id: current_user.id) %>
+                <% @prepaid_pin.each do |u| %>
+                  <tr>
+                  <td><%= u.denomination %></td>
+                  <td><%= u.loaded %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane fade" id="mobiletopuphistory">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Amount</th>
+                  <th>Network</th>
+                  <th>Reference Number</th>
+                  <th>Date Processed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @telco_money = TelcoMoney.where(user_id: current_user.id) %>
+                <% @telco_money.count %>
+                <% if @telco_money.count > 0 %>
+                <% @telco_money.each do |t| %>
+                  <tr>
+                    <td><%= t.amount %></td>
+                    <td><%= t.gateway %></td>
+                    <td><%= t.reference %></td>
+                    <td><%= t.created %></td>
+                  </tr>
+                <% end %>
+                <% else %>
+                  <span class='label label-warning'>None yet.</span>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          <div class="tab-pane fade in active" id="purchasehistory">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>App Name</th>
+                  <th>Coins</th>
+                  <th>Recipient</th>
+                  <th>Date Purchased</th>
+                  <th>Status</th>
+                </tr>
+                <div>
+                  <u>Status</u>
+                  <p>
+                    <img src='https://s3-ap-southeast-1.amazonaws.com/apptivate/image/bullet-blue.png' /> Qued - Apple iTunes Store is going to email you shortly <br/>
+                    <img src='https://s3-ap-southeast-1.amazonaws.com/apptivate/image/bullet-green.png' /> Processed - Check inbox using iOS device. Sometimes it could take awhile <br/>
+                    <img src='https://s3-ap-southeast-1.amazonaws.com/apptivate/image/bullet-red.png' /> Failed - Problem/Error with your Apple ID. Email Customer Support: awesome@apptivate.co    
+                  </p>
+                </div>
+              </thead>
+              <tbody>
+                <% @debit = Debit.where(user_id: current_user.id) %>
+                <% @debit.each do |d| %>
+                  <tr>
+                    <td><%= d.title %></td>
+                    <td><%= d.tier.to_i %></td>
+                    <td><%= d.email_recipient %></td>
+                    <td><%= d.created %></td>
+                    <td><% d.status %>
+                    <% if d.status == 0 %>
+                    <img src='https://s3-ap-southeast-1.amazonaws.com/apptivate/image/bullet-blue.png' />
+                    <% elsif d.status == 1 %>
+                      <img src='https://s3-ap-southeast-1.amazonaws.com/apptivate/image/bullet-green.png' />
+                    <% elsif d.status == 2 %>
+                      <img src='https://s3-ap-southeast-1.amazonaws.com/apptivate/image/bullet-red.png' />
+                    <% end %></td>
+                  </tr>
+                <% end %>
+<!--          <tr><td><a href='http://www.apptivate.co/buyapp/553163611' target='new'>NBA 2K13</a></td><td>340</td><td>celsius@apptivate.co</td><td>2013-02-08 10:29:12</td><td><img src='https://s3-ap-southeast-1.amazonaws.com/apptivate/image/bullet-green.png' /></td></tr>
+              <tr><td><a href='http://www.apptivate.co/buyapp/408982871' target='new'>World Explorer - Made for MineCraft</a></td><td>60</td><td>jecho8@ymail.com</td><td>2013-02-02 12:09:24</td><td><img src='https://s3-ap-southeast-1.amazonaws.com/apptivate/image/bullet-green.png' /></td></tr>
+              <tr><td><a href='http://www.apptivate.co/buyapp/540925500' target='new'>Need for Speed™ Most Wanted</a></td><td>60</td><td>celsius@apptivate.co</td><td>2013-01-07 02:56:55</td><td><img src='https://s3-ap-southeast-1.amazonaws.com/apptivate/image/bullet-green.png' /></td></tr>
+-->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

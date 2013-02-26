@@ -23,6 +23,7 @@ class SessionsController < ApplicationController
                     u.update_attributes(gender:     auth["extra"]["raw_info"]["gender"])
                     u.update_attributes(email:      auth["info"]["email"])
                     u.update_attributes(location:   auth["info"]["location"])
+
         end
       end
       session[:user_id] = user.id

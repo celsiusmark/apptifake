@@ -56,4 +56,36 @@ class UsersController < ApplicationController
     end
     redirect_to lbc_path
   end
+
+  def account
+    if current_user
+      @user = current_user
+    else
+      flash[:error] = "Sign in to edit account"
+    end
+  end
+
+  def my_account
+    @user = current_user
+    if @user.update_attributes(params[:user])
+      flash[:success] = "Account Updated"
+    end
+    redirect_to account_path
+  end
+
+  def redeem_coins
+    if current_user
+      @prepaid_pin = PrepaidPin.where(pin_code: params[:pin_code]).first
+    else
+      flash[:error] = "Sign in to Redeem Coins"
+    end
+  end
+
+  def redeem
+    @prepaid_pin = PrepaidPin.where(pin_code: params[:pin_code]).first
+    if @prepaid_pin.update_attributes(user_id: current_user.id, loaded: DateTime.now)
+      flash[:success] = "Coins Redeemed"
+    end
+    redirect_to redeem_coins_path
+  end
 end

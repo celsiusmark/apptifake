@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  media_type: MyString
+  media: MyString
   genre: MyString
-  feed_id: 1
+  feed_item: 1
 
 two:
-  media_type: MyString
+  media: MyString
   genre: MyString
-  feed_id: 1
+  feed_item: 1
