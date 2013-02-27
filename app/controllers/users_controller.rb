@@ -74,18 +74,23 @@ class UsersController < ApplicationController
   end
 
   def redeem_coins
-    if current_user
-      @prepaid_pin = PrepaidPin.where(pin_code: params[:pin_code]).first
-    else
-      flash[:error] = "Sign in to Redeem Coins"
-    end
-  end
+    if request.get?
+      if current_user
+        @prepaid_pin = PrepaidPin.where(pin_code: params[:pin_code]).first
+      else
+        flash[:error] = "Sign in to Redeem Coins"
+      end
 
-  def redeem
-    @prepaid_pin = PrepaidPin.where(pin_code: params[:pin_code]).first
-    if @prepaid_pin.update_attributes(user_id: current_user.id, loaded: DateTime.now)
-      flash[:success] = "Coins Redeemed"
+    elsif request.put?
+      @prepaid_pin = PrepaidPin.where(pin_code: params[:pin_code]).first
+      if @prepaid_pin == nil
+        flash[:error] = "Invalid pin!"
+      else
+      if @prepaid_pin.update_attributes(user_id: current_user.id, loaded: DateTime.now)
+        flash[:success] = "Coins Redeemed"
+      end
+      redirect_to redeem_coins_path
+      end
     end
-    redirect_to redeem_coins_path
   end
 end

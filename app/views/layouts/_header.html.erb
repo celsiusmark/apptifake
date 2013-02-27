@@ -3,33 +3,29 @@
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="navbar-inner">
       <div class="container">
-        <nav>
-          <div class="head">
-            <nav>
-              <div class="head">
-                <ul class="nav pull-left" id="left">
-                  <li><%= link_to image_tag("https://s3-ap-southeast-1.amazonaws.com/apptivate/image/logo_small_beta.png"), root_url %></li>
-                  <li><%= link_to "Home", root_url %></li>
-                  <li><%= link_to "Contact Us", contact_path %></li>
-                  <li><%= link_to "How To", how_to_path %></li>
-                </ul>
-              </div>
-          </div>
-          <ul class="nav pull-right" id="right">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <li id="fat-menu" class="dropdown">
-                Buy Apps<b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "iPhone or iPod Touch", '#' %></li>
-              <li><%= link_to "iPad", '#' %></li>
-            </ul>
-            <li><%= link_to "Redeem Coins", redeem_coins_path %></li>
-            <li><%= link_to "Buy Coins", buy_coins_path %></li>
-            <li><%= link_to "My Account", account_path %></li>
-            <li id="s"><%= link_to "Sign out", signout_path %></li>
+        <div class="head">
+          <ul class="nav pull-left" id="left">
+            <li id = "logo"><%= link_to image_tag("https://s3-ap-southeast-1.amazonaws.com/apptivate/image/logo_small_beta.png"), root_url %></li>
+            <li><%= link_to "Home", root_url %></li>
+            <li><%= link_to "Contact Us", contact_path %></li>
+            <li><%= link_to "How To", how_to_path %></li>
           </ul>
-        </nav>
+        </div>
+        <ul class="nav pull-right" id="right">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <li id="fat-menu" class="dropdown">
+              Buy Apps<b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "iPhone or iPod Touch", '#' %></li>
+            <li><%= link_to "iPad", '#' %></li>
+          </ul>
+          <li><%= link_to "Redeem Coins", redeem_coins_path %></li>
+          <li><%= link_to "Buy Coins", buy_coins_path %></li>
+          <li><%= link_to "My Account", account_path %></li>
+          <li id="s"><%= link_to "Sign out", signout_path %></li>
+          <li id = "c", class="alert alert-success"><%= coins %> Coins</li>
+        </ul>
       </div>
     </div>
   </header>
@@ -37,29 +33,27 @@
   <header class="navbar navbar-fixed-top navbar-inverse">
     <div class="navbar-inner">
       <div class="container">
-        <nav>
-          <div class="head">
-            <ul class="nav pull-left" id="left">
-              <li><%= link_to image_tag("https://s3-ap-southeast-1.amazonaws.com/apptivate/image/logo_small_beta.png"), root_url %></li>
-              <li><%= link_to "Home", root_url %></li>
-              <li><%= link_to "Contact Us", contact_path %></li>
-              <li><%= link_to "How To", how_to_path %></li>
-            </ul>
-          </div>
-          <ul class="nav pull-right" id="right">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <li id="fat-menu" class="dropdown">
-                Buy Apps<b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "iPhone or iPod Touch", '#' %></li>
-              <li><%= link_to "iPad", '#' %></li>
-            </ul>
-            <li><%= link_to "Redeem Coins", redeem_coins_path %></li>
-            <li><%= link_to "Buy Coins", buy_coins_path %></li>
-            <li id="s"><%= link_to "Sign in with Facebook", "/auth/facebook" %></li>
+        <div class="head">
+          <ul class="nav pull-left" id="left">
+            <li><%= link_to image_tag("https://s3-ap-southeast-1.amazonaws.com/apptivate/image/logo_small_beta.png"), root_url %></li>
+            <li><%= link_to "Home", root_url %></li>
+            <li><%= link_to "Contact Us", contact_path %></li>
+            <li><%= link_to "How To", how_to_path %></li>
           </ul>
-        </nav>
+        </div>
+        <ul class="nav pull-right" id="right">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <li id="fat-menu" class="dropdown">
+              Buy Apps<b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu">
+            <li><%= link_to "iPhone or iPod Touch", '#' %></li>
+            <li><%= link_to "iPad", '#' %></li>
+          </ul>
+          <li><%= link_to "Redeem Coins", redeem_coins_path %></li>
+          <li><%= link_to "Buy Coins", buy_coins_path %></li>
+          <li id="s"><%= link_to "Sign in with Facebook", "/auth/facebook" %></li>
+        </ul>
       </div>
     </div>
   </header>

@@ -14,10 +14,10 @@
           <%= f.submit "Save", class: "btn btn-primary", name: "submit_globeNumber" %>
         <% end %>
       </div>
-      <% if current_user.number_globe != nil %>
+      <% if current_user.number_globe != "" %>
         <%= render 'users/globe' %>
       <% else %>
-        <% #do nothing %>
+        <% render 'users/globe' %>
       <% end %>
     </div>
   </div>
