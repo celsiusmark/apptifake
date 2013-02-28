@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228023348) do
+ActiveRecord::Schema.define(:version => 20130228035542) do
 
   create_table "debits", :force => true do |t|
     t.integer  "user_id"
@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20130228023348) do
     t.datetime "last_access_time"
     t.string   "last_access_page"
     t.datetime "created"
+    t.string   "provider",          :default => "facebook"
   end
 
 end
