@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130220023935) do
+ActiveRecord::Schema.define(:version => 20130228015007) do
 
   create_table "debits", :force => true do |t|
     t.integer  "user_id"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(:version => 20130220023935) do
   end
 
   create_table "telco_moneys", :force => true do |t|
-    t.integer  "user_id",   :limit => 255
+    t.integer  "user_id"
     t.string   "gateway"
     t.string   "reference"
     t.integer  "amount"
