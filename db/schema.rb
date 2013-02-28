@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228015007) do
+ActiveRecord::Schema.define(:version => 20130228023348) do
 
   create_table "debits", :force => true do |t|
     t.integer  "user_id"
@@ -35,9 +35,10 @@ ActiveRecord::Schema.define(:version => 20130228015007) do
   end
 
   create_table "itunes_appstores", :force => true do |t|
-    t.string  "media"
-    t.string  "genre"
-    t.integer "feed_item"
+    t.string   "media"
+    t.string   "genre"
+    t.integer  "feed_item"
+    t.datetime "created"
   end
 
   create_table "prepaid_pins", :force => true do |t|
@@ -65,7 +66,7 @@ ActiveRecord::Schema.define(:version => 20130228015007) do
 
   create_table "telco_moneys", :force => true do |t|
     t.integer  "user_id"
-    t.string   "gateway"
+    t.string   "type"
     t.string   "reference"
     t.integer  "amount"
     t.datetime "expiry"
@@ -73,8 +74,8 @@ ActiveRecord::Schema.define(:version => 20130228015007) do
   end
 
   create_table "user_app_searches", :force => true do |t|
-    t.integer  "user_id",         :limit => 255
-    t.string   "itunes_category"
+    t.string   "user_id"
+    t.string   "type"
     t.string   "query"
     t.datetime "created"
   end
@@ -96,7 +97,6 @@ ActiveRecord::Schema.define(:version => 20130228015007) do
     t.datetime "last_access_time"
     t.string   "last_access_page"
     t.datetime "created"
-    t.string   "provider",          :default => "facebook"
   end
 
 end
