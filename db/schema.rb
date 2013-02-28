@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(:version => 20130228065114) do
     t.string   "pin_code"
     t.integer  "denomination"
     t.string   "distributor"
-    t.datetime "loaded"
+    t.datetime "loaded",       :default => '2009-01-01 00:00:00'
     t.date     "expiry"
     t.datetime "created"
   end
