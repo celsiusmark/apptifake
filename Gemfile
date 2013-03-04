@@ -4,6 +4,7 @@ gem 'rails', '3.2.9'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'bootstrap-sass'
+gem 'heroku-gem', '2.32.14'
 
 group :development do
   gem 'sqlite3', '1.3.5'
