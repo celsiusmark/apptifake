@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228065114) do
+ActiveRecord::Schema.define(:version => 20130304023510) do
 
   create_table "debits", :force => true do |t|
     t.integer  "user_id"
@@ -74,10 +74,10 @@ ActiveRecord::Schema.define(:version => 20130228065114) do
   end
 
   create_table "user_app_searches", :force => true do |t|
-    t.string   "user_id"
-    t.string   "type"
-    t.string   "query"
-    t.datetime "created"
+    t.string "user_id"
+    t.string "type"
+    t.string "query"
+    t.date   "created"
   end
 
   create_table "users", :force => true do |t|
