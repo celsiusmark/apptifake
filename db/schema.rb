@@ -74,10 +74,10 @@ ActiveRecord::Schema.define(:version => 20130304023510) do
   end
 
   create_table "user_app_searches", :force => true do |t|
-    t.string "user_id"
-    t.string "type"
-    t.string "query"
-    t.date   "created"
+    t.string   "user_id"
+    t.string   "type"
+    t.string   "query"
+    t.datetime "created"
   end
 
   create_table "users", :force => true do |t|
