@@ -13,10 +13,10 @@
         <%= f.submit "Save", class: "btn btn-primary", name: "submit_numbernotify" %>
       <% end %>
     </div>
-    <% if current_user.number_notify != "" %>
+    <% if current_user.number_notify != nil %>
       <%= render 'users/lbc_steps' %>
     <% else %>
-      <% #do nothing %>
+      <% render 'users/lbc_steps' %>
     <% end %>
   </div>
 <% else %>

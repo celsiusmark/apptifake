@@ -16,10 +16,10 @@
         <% end %>
         </form>
       </div>
-      <% if current_user.number_smart != "" %>
+      <% if current_user.number_smart != nil %>
         <%= render 'users/smart' %>
       <% else %>
-        <% #do nothing %>
+        <% render 'users/smart' %>
       <% end %>
     </div>
   </div>
