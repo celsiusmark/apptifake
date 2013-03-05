@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(:version => 20130304023510) do
     t.string   "number_notify"
     t.string   "number_globe"
     t.string   "number_smart"
-    t.datetime "last_access_time"
+    t.datetime "last_access_time",  :default => '2009-01-01 00:00:00'
     t.string   "last_access_page"
     t.datetime "created"
     t.string   "provider",          :default => "facebook"
